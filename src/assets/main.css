@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -15,8 +15,4 @@ a {
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-}
-.container{
-  max-width: 1500px;
-  margin: 0 auto;
 }

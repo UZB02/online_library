@@ -1,16 +1,20 @@
 <script setup>
 import Section1 from "../components/Sections/Section1.vue"
 import Section2 from "../components/Sections/Section2.vue"
+import Section3 from "../components/Sections/Section3.vue"
 
 </script>
 
 <template>
 <div class="main">
-    <section class="w-full py-10 md:py-20">
+    <section class="w-full py-10 md:py-6">
         <Section1></Section1>
     </section>
-    <section class="w-full py-10 md:py-20">
+    <section class="w-full py-10 md:py-6">
         <Section2></Section2>
+    </section>
+    <section class="w-full py-10 md:py-6">
+        <Section3></Section3>
     </section>
 </div>
 </template>

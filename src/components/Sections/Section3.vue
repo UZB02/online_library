@@ -38,84 +38,84 @@ const products = ref(
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 2,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 3,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 4,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 5,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 6,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
+            image: 'https://avatars.mds.yandex.net/i?id=9b453dae7bf3ec127079ab5d0a936fd5fed50d3d-8497818-images-thumbs&n=13',
             price: "Tog'ay Murod",
             inventoryStatus: 'INSTOCK'
         },
