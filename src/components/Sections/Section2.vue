@@ -1,8 +1,8 @@
 <template>
   <div
-    class="container mx-auto flex flex-col gap-7 items-center justify-center p-4"
+    class="container mx-auto flex flex-col gap-7 items-center justify-center"
   >
-    <div class="top w-full flex items-center justify-evenly">
+    <div class="top w-full flex items-center justify-evenly p-4">
       <span>
         <img
           src="../../img/book.png"
@@ -10,7 +10,7 @@
           alt=""
         />
       </span>
-      <span>
+      <span class="text-start w-[80%] md:w-1/2">
         <h1 class="text-2xl md:text-4xl">
           Kutibxonamiz tavsiya etadigan adabiyotlar
         </h1>
@@ -39,85 +39,85 @@ const products = ref(
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 2,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 3,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 4,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 5,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 6,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
         {
             id: 1,
             name: 'Ot kishnagan kecha',
             image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            price: "Tog'ay Murod",
-            inventoryStatus: 'INSTOCK'
+            autor: "Tog'ay Murod",
+            lang: 'UZ'
         },
     ]
 );

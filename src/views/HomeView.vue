@@ -2,6 +2,8 @@
 import Section1 from "../components/Sections/Section1.vue"
 import Section2 from "../components/Sections/Section2.vue"
 import Section3 from "../components/Sections/Section3.vue"
+import Section4 from "../components/Sections/Section4.vue"
+import Footer from "../components/Footer/Main.vue"
 
 </script>
 
@@ -13,9 +15,15 @@ import Section3 from "../components/Sections/Section3.vue"
     <section class="w-full py-10 md:py-6">
         <Section2></Section2>
     </section>
-    <section class="w-full py-10 md:py-6">
+    <section class="w-full py-10 bg-green-100 md:py-6">
         <Section3></Section3>
     </section>
+    <section class="w-full py-10 bg-yellow-100 md:py-6">
+        <Section4></Section4>
+    </section>
+    <footer>
+        <Footer></Footer>
+    </footer>
 </div>
 </template>
 

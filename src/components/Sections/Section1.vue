@@ -1,7 +1,7 @@
 <template >
  
-      <div class="container mx-auto flex items-center justify-center  p-4">
-          <div  class="left   flex flex-col items-center gap-14 md:gap-20 w-full md:w-[60%] h-full justify-evenly">
+      <div class="container mx-auto flex items-center justify-center ">
+          <div  class="left p-4  flex flex-col items-center gap-14 md:gap-20 w-full md:w-[60%] h-full justify-evenly">
             <h1 class="md:text-4xl text-3xl font-bold text-balance md:text-pretty md:text-center"><span class="text-yellow-400">"Boborahim Mashrab"</span> nomli husisiy maktab online kutibhonasi</h1>
             <div class="center flex items-center justify-around w-full md:w-[70%]">
                 <div class="info flex flex-col items-center justify-center gap-2">
