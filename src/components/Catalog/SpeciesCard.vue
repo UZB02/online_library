@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-2 py-5">
-    <h1 class="w-1/2">Mashhur janrlar</h1>
+  <div class="flex w-full items-center flex-col gap-2 py-5">
+    <h1 class="text-xl  md:w-[80%] md:text-2xl">Mashhur janrlar</h1>
    <div class="flex items-center flex-wrap justify-center gap-2 py-5">
      <div v-for="item in data" class="card  rounded p-4 flex gap-2 cursor-pointer shadow">
       <div>
