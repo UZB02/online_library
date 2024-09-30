@@ -2,9 +2,9 @@
 <template>
 	<nav class="sticky top-0 px-4 py-4 flex justify-between items-center bg-white border-b">
         <div class="container flex mx-auto justify-between items-center">
-            		<a class="text-3xl font-bold leading-none" href="#">
+            		<RouterLink to="/" class="text-3xl font-bold leading-none" href="#">
 			<img class="w-12 h-12" src="../../img/photo_2024-01-18_09-04-45.jpg" alt="">
-		</a>
+					</RouterLink>
 		<div class="lg:hidden">
 			<button class="navbar-burger flex items-center text-green-600 p-3">
 				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +81,8 @@
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
+
 document.addEventListener('DOMContentLoaded', function() {
     // open
     const burger = document.querySelectorAll('.navbar-burger');
