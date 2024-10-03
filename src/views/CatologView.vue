@@ -12,9 +12,14 @@
             <SpeciesCards />
         </div>
     </section>
+    <section class="w-full md:p-28 md:py-6">
+            <GenresCards />
+    </section>
 </template>
 <script setup>
-import SpeciesCards from '../components/Catalog/SpeciesCard.vue'
+import { ref } from 'vue';
+import SpeciesCards from '../components/Catalog/CatalogCard/SpeciesCard.vue'
+import GenresCards from '../components/Catalog/CatalogGenres/GenresCards.vue'
 </script>
 <style scoped>
 

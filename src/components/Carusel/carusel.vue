@@ -3,7 +3,6 @@
   <Carousel
     :value="products"
     :numVisible="6"
-    :contentClass="products.length>=6 ? '' : ''"
     :numScroll="1"
     :responsiveOptions="responsiveOptions"
     class="w-[95vw] md:w-[90vw]"
