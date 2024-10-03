@@ -22,5 +22,11 @@ import SpeciesCards from '../components/Catalog/CatalogCard/SpeciesCard.vue'
 import GenresCards from '../components/Catalog/CatalogGenres/GenresCards.vue'
 </script>
 <style scoped>
-
+.top{
+    background: url("https://avatars.mds.yandex.net/i?id=f56a68754d11505e0c0c86d3de5a4b12921f000f-9222419-images-thumbs&n=13");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    filter: none;
+}
 </style>
