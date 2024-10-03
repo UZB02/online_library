@@ -2,14 +2,14 @@
   <div
     class="container flex flex-col md:flex-row gap-3  justify-between"
   >
-    <div class="left px-3 w-full md:w-[25%]">
-      <div style="width: 100%" class="h-[100vh] overflow-y-scroll p-3 flex flex-col  shadow rounded">
-        <div class="flex items-center justify-between">
+    <div class="left  w-full md:w-[25%]">
+      <div style="width: 100%" class="flex flex-col py-2 shadow rounded">
+        <div class="flex items-center px-3 justify-between">
             <h1 class="text-lg font-bold text-green-500 md:text-2xl">Janrlar</h1>
             <p class="text-sm text-slate-400">20 Janr</p>
         </div>
-        <div class="flex flex-col items-center justify-center">
-            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1>{{item.name}}</h1> <p>{{item.num}}</p></span>
+        <div class="flex flex-col items-center overflow-y-scroll w-full">
+            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.name}}</h1> <p class="text-slate-400">{{item.num}}</p></span>
         </div>
       </div>
     </div>
@@ -230,36 +230,6 @@ const products = ref([
 ]);
 
 const genres=ref([
-    {
-        id: 1,
-        name: "Fiction",
-        num:1326
-    },
-    {
-        id: 2,
-        name: "Non-Fiction",
-        num: 987    
-    },
-    {
-        id: 3,
-        name: "Adventure",
-        num: 654
-    },
-    {
-        id: 4,
-        name: "Science Fiction",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
     {
         id: 1,
         name: "Fiction",
