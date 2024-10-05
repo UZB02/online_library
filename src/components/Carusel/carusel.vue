@@ -13,27 +13,28 @@
       >
         <div
         @click="gotoIdPage(slotProps.data.id)"
-          class="card relative flex flex-col gap-2 border cursor-pointer border-surface-200 dark:border-surface-700 rounded m-1 p-1"
+          class="card relative flex flex-col gap-2 border cursor-pointer border-surface-200 dark:border-surface-700 rounded m-1  border-r-4 border-salte-100"
         >
           <div class="">
             <div class="relative mx-auto">
               <img
                 :src="slotProps.data.image"
                 :alt="slotProps.data.name"
-                class="w-full h-52 md:h-64 rounded"
+                class="w-full h-52 md:h-64 "
               />
             </div>
           </div>
-          <div class="font-medium uppercase">{{ slotProps.data.name }}</div>
+        <div class="flex flex-col px-1">
+            <div class="font-medium uppercase">{{ slotProps.data.name }}</div>
           <div class="flex justify-between items-center">
-            <div class="font-semibold text-base md:text-xl">
+            <div class="font-semibold text-base md:text-xl ">
               {{ slotProps.data.autor }}
             </div>
-            <span>
-              <Button icon="pi pi-heart" severity="secondary" outlined />
-              <Button icon="pi pi-shopping-cart" class="" />
-            </span>
+            <!-- <span>
+              <Button icon="pi pi-download" class="" />
+            </span> -->
           </div>
+        </div>
           <span :class="slotProps.data.lang ?'absolute md:top-60 md:right-2 bg-slate-100 p-1 rounded text-sm': 'hidden'">{{slotProps.data.lang}}</span>
         </div>
       </div>
@@ -46,6 +47,7 @@
 import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
 import Carousel from "primevue/carousel";
+import Button from "primevue/button";
 import router from "@/router";
 
 const props = defineProps({
