@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LibraryLayout from '../../src/layouts/Library.vue'
+import GenresLayout from '../../src/layouts/Genres.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,14 @@ const router = createRouter({
       component: () => import("../views/CatologView.vue"),
       meta: {
         layout: LibraryLayout,
+      },
+    },
+    {
+      path: "/catalog/genres/:slug",
+      name: "CatalogGenres",
+      component: () => import("../views/CatalogGenresView.vue"),
+      meta: {
+        layout: GenresLayout,
       },
     },
   ],

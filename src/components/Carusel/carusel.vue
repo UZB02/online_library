@@ -13,7 +13,7 @@
       >
         <div
         @click="gotoIdPage(slotProps.data.id)"
-          class="card relative flex flex-col gap-2 border cursor-pointer border-surface-200 dark:border-surface-700 rounded m-1  border-r-4 border-salte-100"
+          class="card relative flex flex-col transition-all duration-200 hover:-translate-y-2 gap-2 border cursor-pointer border-surface-200 dark:border-surface-700 rounded m-1  border-r-4 border-salte-100"
         >
           <div class="">
             <div class="relative mx-auto">

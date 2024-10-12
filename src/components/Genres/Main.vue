@@ -1,23 +1,17 @@
 <template>
-  <div
-    class="container flex flex-col lg:flex-row gap-3  justify-between"
-  >
-    <div :class="menu ? `left lg:block w-full lg:w-[25%]` : `left hidden lg:block w-full lg:w-[25%]`">
+  <div class="container flex flex-col lg:flex-row gap-3  justify-between">
+      <span @click="openMenu()"  class="absolute lg:hidden flex items-center justify-center gap-1 bg-slate-100 rounded p-1 right-3 top-[90px] text-green-500">
+        <i class="pi pi-sliders-v"></i>
+        <h1>Janrlar</h1>
+    </span>
+    <div class="transition duration-500" :class="menu ? `left lg:block w-full lg:w-[25%]` : `hidden lg:block w-full lg:w-[25%]`">
       <div style="width: 100%" class="flex flex-col py-2 shadow rounded">
-        <div class="flex items-center px-3 justify-between">
-            <h1 class="text-lg font-bold text-green-500 md:text-2xl">Janrlar</h1>
-            <p class="text-sm text-slate-400">20 Janr</p>
-        </div>
-        <div class="flex flex-col items-center overflow-y-scroll w-full">
+        <div class="flex flex-col items-center  overflow-y-scroll w-full">
             <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.name}}</h1> <p class="text-slate-400">{{item.num}}</p></span>
         </div>
       </div>
     </div>
-    <div class="right relative w-full px-3 flex flex-col gap-2 lg:w-[75%]">
-       <span @click="openMenu()"  class="absolute lg:hidden flex items-center justify-center gap-1 bg-slate-100 rounded p-1 right-0 md:-top-6 text-green-500">
-        <i class="pi pi-sliders-v"></i>
-        <h1>Janrlar</h1>
-    </span>
+    <div class="right w-full px-3 flex flex-col gap-2 lg:w-[75%]">
       <div>
         <div class="flex gap-2 md:justify-between items-center">
           <div>
@@ -186,7 +180,6 @@ const menu=ref(false)
 function openMenu() {
     menu.value =!menu.value
 }
-
 const products = ref([
   {
     id: 1,
@@ -240,24 +233,24 @@ const products = ref([
 ]);
 
 const genres=ref([
-    {
+   {
         id: 1,
-        name: "Fiction",
-        num:1326
+        name: "She'riyat",
+        num:56
     },
     {
         id: 2,
-        name: "Non-Fiction",
-        num: 987    
+        name: "Fantastika",
+        num: 87    
     },
     {
         id: 3,
-        name: "Adventure",
-        num: 654
+        name: "Sarguzasht",
+        num: 54
     },
     {
         id: 4,
-        name: "Science Fiction",
+        name: "Ertaklar",
         num: 456
     },
     {
