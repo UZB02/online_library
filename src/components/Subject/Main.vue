@@ -176,9 +176,9 @@ import Carousel from "primevue/carousel";
 import { ref, onMounted } from "vue";
 import router from "@/router";
 const menu=ref(false)
-
 const catalogID=router.currentRoute.value.params.slug
-console.log(catalogID);
+const subjectID=router.currentRoute.value.params.id
+
 
 function openMenu() {
     menu.value =!menu.value
@@ -238,73 +238,18 @@ const products = ref([
 const genres=ref([
    {
         id: 1,
-        name: "She'riyat",
+        name: "Kitoblar",
         num:56
     },
     {
         id: 2,
-        name: "Fantastika",
+        name: "Audio kitoblar",
         num: 87    
     },
-    {
-        id: 3,
-        name: "Sarguzasht",
-        num: 54
-    },
-    {
-        id: 4,
-        name: "Ertaklar",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 1,
-        name: "Fiction",
-        num:1326
-    },
-    {
-        id: 2,
-        name: "Non-Fiction",
-        num: 987    
-    },
-    {
-        id: 3,
-        name: "Adventure",
-        num: 654
-    },
-    {
-        id: 4,
-        name: "Science Fiction",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 7,
-        name: "Thriller",
-        num: 123
-    }
 ])
 
 function gotoGenresPage(id) {
-    router.push(`/catalog/genres/${catalogID}/subject/${id}`)
+    router.push(`/catalog/genres/${catalogID}/subject/${subjectID}/books`)
 }
 function gotoIdPage(id) {
   console.log(id);

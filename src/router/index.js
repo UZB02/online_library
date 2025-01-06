@@ -32,6 +32,22 @@ const router = createRouter({
         layout: GenresLayout,
       },
     },
+    {
+      path: "/catalog/genres/:slug/subject/:id",
+      name: "Subject",
+      component: () => import("../views/SubjectView.vue"),
+      meta: {
+        layout: GenresLayout,
+      },
+    },
+    {
+      path: "/catalog/genres/:slug/subject/:id/books",
+      name: "All Books",
+      component: () => import("../views/AllBooksView.vue"),
+      meta: {
+        layout: GenresLayout,
+      },
+    },
   ],
 });
 
