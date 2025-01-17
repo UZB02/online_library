@@ -68,7 +68,7 @@ getCategories()
 
 
 function gotoPage(id){
-    router.push(`/catalog/genres/${id}`)
+    router.push(`/catalog/${id}`)
 }
 </script>
 <style scoped></style>

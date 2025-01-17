@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import LibraryLayout from '../../src/layouts/Library.vue'
 import GenresLayout from '../../src/layouts/Genres.vue'
 import axios from "axios";
-axios.defaults.baseURL = "https://library-backend-o50j.onrender.com/";
+// axios.defaults.baseURL = "https://library-backend-ixau.onrender.com";
+axios.defaults.baseURL = "http://localhost:5001";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/catalog/genres/:slug",
+      path: "/catalog/:slug",
       name: "CatalogGenres",
       component: () => import("../views/CatalogGenresView.vue"),
       meta: {
@@ -35,7 +36,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/catalog/genres/:slug/subject/:id",
+      path: "/catalog/genres/:slug/:id",
       name: "Subject",
       component: () => import("../views/SubjectView.vue"),
       meta: {

@@ -239,7 +239,7 @@ const products = ref([
 const genres=ref()
 
 function getCatalogs(){
-  axios.get(`/api/catologs`)
+  axios.get(`/api/catologs/${catalogID}`)
  .then(response => {
   genres.value=response.data
   console.log(response.data);
@@ -248,7 +248,7 @@ function getCatalogs(){
 getCatalogs()
 
 function gotoGenresPage(id) {
-    router.push(`/catalog/genres/${catalogID}/subject/${id}`)
+    router.push(`/catalog/genres/${catalogID}/${id}`)
 }
 function gotoIdPage(id) {
   console.log(id);
