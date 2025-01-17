@@ -18,17 +18,17 @@
           <div class="">
             <div class="relative mx-auto">
               <img
-                :src="slotProps.data.image"
-                :alt="slotProps.data.name"
-                class="w-full h-52 md:h-64 "
+                :src="slotProps.data.img"
+                :alt="slotProps.data.title"
+                class="w-full h-52 md:h-64 object-cover"
               />
             </div>
           </div>
         <div class="flex flex-col px-1">
-            <div class="font-medium uppercase">{{ slotProps.data.name }}</div>
+            <div class="font-medium uppercase">{{ slotProps.data.title }}</div>
           <div class="flex justify-between items-center">
             <div class="font-semibold text-base md:text-xl ">
-              {{ slotProps.data.autor }}
+              {{ slotProps.data.author }}
             </div>
             <!-- <span>
               <Button icon="pi pi-download" class="" />

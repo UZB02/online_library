@@ -58,18 +58,18 @@
                 <div class="">
                   <div class="relative mx-auto">
                     <img
-                      :src="slotProps.data.image"
-                      :alt="slotProps.data.name"
+                      :src="slotProps.data.img"
+                      :alt="slotProps.data.title"
                       class="w-full h-44 md:h-44 rounded"
                     />
                   </div>
                 </div>
                 <div class="font-medium uppercase">
-                  {{ slotProps.data.name }}
+                  {{ slotProps.data.title }}
                 </div>
                 <div class="flex justify-between items-center">
                   <div class="font-semibold text-base md:text-xl">
-                    {{ slotProps.data.autor }}
+                    {{ slotProps.data.author }}
                   </div>
                   <span>
                     <Button icon="pi pi-heart" severity="secondary" outlined />
@@ -136,18 +136,18 @@
                 <div class="">
                   <div class="relative mx-auto">
                     <img
-                      :src="slotProps.data.image"
-                      :alt="slotProps.data.name"
+                      :src="slotProps.data.img"
+                      :alt="slotProps.data.title"
                       class="w-full h-44 md:h-44 rounded"
                     />
                   </div>
                 </div>
                 <div class="font-medium uppercase">
-                  {{ slotProps.data.name }}
+                  {{ slotProps.data.title }}
                 </div>
                 <div class="flex justify-between items-center">
                   <div class="font-semibold text-base md:text-xl">
-                    {{ slotProps.data.autor }}
+                    {{ slotProps.data.author }}
                   </div>
                   <span>
                     <Button icon="pi pi-heart" severity="secondary" outlined />
@@ -175,71 +175,39 @@ import ScrollPanel from "primevue/scrollpanel";
 import Carousel from "primevue/carousel";
 import { ref, onMounted } from "vue";
 import router from "@/router";
+import axios from "axios";
 const menu=ref(false)
 const catalogID=router.currentRoute.value.params.slug
 const subjectID=router.currentRoute.value.params.id
-
+const products = ref([]);
+const audiobooks=ref(0)
+const book=ref([])
 
 function openMenu() {
     menu.value =!menu.value
 }
-const products = ref([
-  {
-    id: 1,
-    name: "Product 1",
-    autor: "Author 1",
-    image: "https://picsum.photos/id/1015/500/300",
-    lang: "English",
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    autor: "Author 2",
-    image: "https://picsum.photos/id/1016/500/300",
-    lang: "Spanish",
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    autor: "Author 3",
-    image: "https://picsum.photos/id/1019/500/300",
-    lang: "French",
-  },
-  {
-    id: 4,
-    name: "Product 4",
-    autor: "Author 4",
-    image: "https://picsum.photos/id/1018/500/300",
-    lang: "Chinese",
-  },
-  {
-    id: 5,
-    name: "Product 5",
-    autor: "Author 5",
-    image: "https://picsum.photos/id/1019/500/300",
-    lang: "Russian",
-  },
-  {
-    id: 6,
-    name: "Product 6",
-    autor: "Author 6",
-    image: "https://picsum.photos/id/1020/500/300",
-    lang: "English",
-  },
-  {
-    id: 7,
-    name: "Product 7",
-    autor: "Author 7",
-    image: "https://picsum.photos/id/1021/500/300",
-    lang: "Spanish",
-  },
-]);
+
+
+function getDataGeneres(){
+  axios.get(`/api/categories=${catalogID}/catalog=${subjectID}`)
+   .then((response) => {
+      products.value = response.data;
+      audiobooks.value = response.data.filter((item) => item.tipe==='audio').length
+      book.value = response.data.filter((item) => item.tipe==='file').length
+      console.log(response.data);
+      console.log(audiobooks.value);
+    })
+   .catch((error) => {
+      console.error(error);
+    });
+}
+getDataGeneres()
 
 const genres=ref([
    {
         id: 1,
         name: "Kitoblar",
-        num:56
+        num:audiobooks.value
     },
     {
         id: 2,

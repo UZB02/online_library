@@ -4,10 +4,6 @@
     <i class="pi pi-chevron-left"></i>
     <h1 class="text-xl md:text-3xl font-bold">O'zbek Adabiyoti</h1>
    </RouterLink>
-    <!-- <div class="w-2/3 cursor-pointer md:w-[80%] flex gap-2 text-green-400 items-center justify-center md:justify-start">
-        <span class="text-sm underline">610 Kitob</span>
-        <span class="text-sm underline">415 Audiokitob</span>
-      </div> -->
   </div>
   <section>
   </section>

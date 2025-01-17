@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto flex flex-col gap-7 items-center justify-center "
+    class="container mx-auto flex flex-col gap-7 items-center justify-center"
   >
     <div class="top w-full flex items-center justify-evenly">
       <span>
@@ -11,16 +11,16 @@
         />
       </span>
       <span class="text-start w-[80%] md:w-1/2">
-        <h1 class="text-2xl md:text-4xl">
-         Audioresurslar
-        </h1>
+        <h1 class="text-2xl md:text-4xl">Audioresurslar</h1>
         <h2>Tinglash uchun audioadabiyotlar</h2>
       </span>
       <button
         @click="toggleFilter"
         class="flex items-center justify-center text-green-500 cursor-pointer"
       >
-        <span class="hidden underline text-lg md:block">Eng yangi audiokitoblar</span>
+        <span class="hidden underline text-lg md:block"
+          >Eng yangi audiokitoblar</span
+        >
         <i class="pi pi-angle-right"></i>
       </button>
     </div>
@@ -31,96 +31,111 @@
 </template>
 <script setup>
 import { ref } from "vue";
-import Carusel from "../Carusel/carusel.vue"
+import Carusel from "../Carusel/carusel.vue";
+import axios from "axios";
 
-const products = ref(
-    [
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 2,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 3,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 4,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 5,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 6,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Jannati odamlar',
-            image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
-            autor: "Xudoyberdi To'xtaboyev",
-            lang: 'UZ'
-        },
-    ]
-);
+const products = ref([]);
+
+function getProducts() {
+  axios
+    .get("/api/books")
+    .then((response) => {
+      products.value = response.data.filter(item => item.tipe === "audio");
+      console.log(products.value);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+getProducts();
+
+// const products = ref(
+//     [
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 2,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 3,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 4,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 5,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 6,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//         {
+//             id: 1,
+//             name: 'Jannati odamlar',
+//             image: 'https://avatars.mds.yandex.net/i?id=4c03db48f218fde6888416907cab1d6235e7c083-6873210-images-thumbs&n=13',
+//             autor: "Xudoyberdi To'xtaboyev",
+//             lang: 'UZ'
+//         },
+//     ]
+// );
 </script>
-<style scoped>
-</style>
+<style scoped></style>

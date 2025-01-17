@@ -32,95 +32,21 @@
 <script setup>
 import { ref } from "vue";
 import Carusel from "../Carusel/carusel.vue"
+import axios from 'axios'
 
-const products = ref(
-    [
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 2,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 3,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 4,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 5,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 6,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-        {
-            id: 1,
-            name: 'Ot kishnagan kecha',
-            image: 'https://tovar.uz/images/company/444/tovar/8584/o_1_5ef850d429d3f.jpg',
-            autor: "Tog'ay Murod",
-            lang: 'UZ'
-        },
-    ]
-);
+const products = ref([])
+
+function getProducts(){
+  axios.get('/api/books')
+   .then(response => {
+      products.value = response.data;
+      console.log(products.value);
+    })
+   .catch(error => {
+      console.error(error);
+    });
+}
+getProducts()
 </script>
 <style scoped>
 </style>

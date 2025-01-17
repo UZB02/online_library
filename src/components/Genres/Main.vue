@@ -7,7 +7,7 @@
     <div class="transition duration-500" :class="menu ? `left lg:block w-full lg:w-[25%]` : `hidden lg:block w-full lg:w-[25%]`">
       <div style="width: 100%" class="flex flex-col py-2 shadow rounded">
         <div class="flex flex-col items-center  overflow-y-scroll w-full">
-            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.name}}</h1> <p class="text-slate-400">{{item.num}}</p></span>
+            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.title}}</h1> <p class="text-slate-400">{{item.books}}</p></span>
         </div>
       </div>
     </div>
@@ -175,6 +175,7 @@ import ScrollPanel from "primevue/scrollpanel";
 import Carousel from "primevue/carousel";
 import { ref, onMounted } from "vue";
 import router from "@/router";
+import axios from "axios";
 const menu=ref(false)
 
 const catalogID=router.currentRoute.value.params.slug
@@ -235,73 +236,16 @@ const products = ref([
   },
 ]);
 
-const genres=ref([
-   {
-        id: 1,
-        name: "She'riyat",
-        num:56
-    },
-    {
-        id: 2,
-        name: "Fantastika",
-        num: 87    
-    },
-    {
-        id: 3,
-        name: "Sarguzasht",
-        num: 54
-    },
-    {
-        id: 4,
-        name: "Ertaklar",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 1,
-        name: "Fiction",
-        num:1326
-    },
-    {
-        id: 2,
-        name: "Non-Fiction",
-        num: 987    
-    },
-    {
-        id: 3,
-        name: "Adventure",
-        num: 654
-    },
-    {
-        id: 4,
-        name: "Science Fiction",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 7,
-        name: "Thriller",
-        num: 123
-    }
-])
+const genres=ref()
+
+function getCatalogs(){
+  axios.get(`/api/catologs`)
+ .then(response => {
+  genres.value=response.data
+  console.log(response.data);
+ })
+}
+getCatalogs()
 
 function gotoGenresPage(id) {
     router.push(`/catalog/genres/${catalogID}/subject/${id}`)

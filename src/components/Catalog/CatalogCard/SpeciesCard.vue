@@ -1,17 +1,17 @@
 <template>
   <div class="flex w-full items-center flex-col gap-2 py-5">
     <h1 class="text-xl  md:w-[80%] md:text-2xl">Mashhur janrlar</h1>
-   <div class="flex items-center flex-wrap justify-center gap-2 py-5">
+   <div class="grid xs:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-4">
      <div v-for="item in data" @click="gotoPage(item.id)" class="card  rounded p-4 flex gap-2 cursor-pointer shadow">
       <div>
         <img
           class="w-20 md:w-24"
-          :src="item.cover"
+          :src="item.img"
           alt="Image"
         />
       </div>
       <div class="flex flex-col items-center justify-center gap-3">
-        <h1 class="md:text-xl font-bold">{{item.title}}</h1>
+        <h1 class="md:text-xl font-bold">{{item.name}}</h1>
         <div class="flex flex-col items-center justify-center gap-2">
           <span class="flex w-full items-center gap-2">
             <svg
@@ -50,40 +50,25 @@
 </template>
 <script setup>
 import { ref } from "vue";
+import axios from "axios";
+import router from "@/router";
 
-const data=ref([
-    {
-        id: 1,
-        title: "O'zbek adabiyoti",
-        cover: "https://api.kitob.itsm.uz/data/genres/cover/3.png",
-        books: 610,
-        audiobooks: 500
-    },
-    {
-        id: 2,
-        title: "Jahon Adabiyoti",
-        cover: "https://api.kitob.itsm.uz/data/genres/cover/12.png",
-        books: 780,
-        audiobooks: 650
-    },
-    {
-        id: 3,
-        title: "Tarix",
-        cover: "https://api.kitob.itsm.uz/data/genres/cover/18.png",
-        books: 50,
-        audiobooks: 24
-    },
-    {
-        id: 4,
-        title: "Xorijiy Adabiyotlar",
-        cover: "https://api.kitob.itsm.uz/data/genres/cover/236.png",
-        books: 400,
-        audiobooks: 350
-    }
-])
+const data=ref([])
+
+function getCategories(){
+  axios.get("/api/categories")
+  .then((response) => {
+    data.value = response.data;
+    console.log(response.data);
+  }).catch((err)=>{
+    console.log(err);
+  });
+}
+getCategories()
+
 
 function gotoPage(id){
-    console.log(id);
+    router.push(`/catalog/genres/${id}`)
 }
 </script>
 <style scoped></style>

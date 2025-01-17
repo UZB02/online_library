@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LibraryLayout from '../../src/layouts/Library.vue'
 import GenresLayout from '../../src/layouts/Genres.vue'
+import axios from "axios";
+axios.defaults.baseURL = "https://library-backend-o50j.onrender.com/";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -2,22 +2,8 @@
   <div
     class="container flex flex-col lg:flex-row gap-3  justify-between"
   >
-    <div :class="menu ? `left lg:block w-full lg:w-[25%]` : `left hidden lg:block w-full lg:w-[25%]`">
-      <div style="width: 100%" class="flex flex-col py-2 shadow rounded">
-        <div class="flex items-center px-3 justify-between">
-            <h1 class="text-lg font-bold text-green-500 md:text-2xl">Janrlar</h1>
-            <p class="text-sm text-slate-400">20 Janr</p>
-        </div>
-        <div class="flex flex-col items-center overflow-y-scroll w-full">
-            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.name}}</h1> <p class="text-slate-400">{{item.num}}</p></span>
-        </div>
-      </div>
-    </div>
-    <div class="right relative w-full px-3 flex flex-col gap-2 lg:w-[75%]">
-       <span @click="openMenu()"  class="absolute lg:hidden flex items-center justify-center gap-1 bg-slate-100 rounded p-1 right-0 md:-top-6 text-green-500">
-        <i class="pi pi-sliders-v"></i>
-        <h1>Janrlar</h1>
-    </span>
+ 
+    <div class="relative w-full px-3 flex flex-col gap-2">
       <div>
         <div class="flex gap-2 md:justify-between items-center">
           <div>
@@ -49,7 +35,7 @@
           </span>
         </div>
         <Carousel
-          :value="products"
+          :value="productsfile"
           :numVisible="4"
           :numScroll="1"
           :responsiveOptions="responsiveOptions"
@@ -64,18 +50,18 @@
                 <div class="">
                   <div class="relative mx-auto">
                     <img
-                      :src="slotProps.data.image"
-                      :alt="slotProps.data.name"
+                      :src="slotProps.data.img"
+                      :alt="slotProps.data.title"
                       class="w-full h-44 md:h-44 rounded"
                     />
                   </div>
                 </div>
                 <div class="font-medium uppercase">
-                  {{ slotProps.data.name }}
+                  {{ slotProps.data.title }}
                 </div>
                 <div class="flex justify-between items-center">
                   <div class="font-semibold text-base md:text-xl">
-                    {{ slotProps.data.autor }}
+                    {{ slotProps.data.author }}
                   </div>
                   <span>
                     <Button icon="pi pi-heart" severity="secondary" outlined />
@@ -127,7 +113,7 @@
           </span>
         </div>
         <Carousel
-          :value="products"
+          :value="productsaudio"
           :numVisible="4"
           :numScroll="1"
           :responsiveOptions="responsiveOptions"
@@ -142,18 +128,18 @@
                 <div class="">
                   <div class="relative mx-auto">
                     <img
-                      :src="slotProps.data.image"
-                      :alt="slotProps.data.name"
+                      :src="slotProps.data.img"
+                      :alt="slotProps.data.title"
                       class="w-full h-44 md:h-44 rounded"
                     />
                   </div>
                 </div>
                 <div class="font-medium uppercase">
-                  {{ slotProps.data.name }}
+                  {{ slotProps.data.title }}
                 </div>
                 <div class="flex justify-between items-center">
                   <div class="font-semibold text-base md:text-xl">
-                    {{ slotProps.data.autor }}
+                    {{ slotProps.data.author }}
                   </div>
                   <span>
                     <Button icon="pi pi-heart" severity="secondary" outlined />
@@ -182,130 +168,24 @@ import Carousel from "primevue/carousel";
 import { ref, onMounted } from "vue";
 import router from "@/router";
 const menu=ref(false)
+import axios from "axios";
 
-function openMenu() {
-    menu.value =!menu.value
+const productsaudio = ref([]);
+const productsfile = ref([]);
+
+function getProducts() {
+  axios
+    .get("/api/books")
+    .then((response) => {
+      productsfile.value = response.data.filter(item => item.tipe === "file");
+      productsaudio.value = response.data.filter(item => item.tipe === "audio");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
+getProducts();
 
-const products = ref([
-  {
-    id: 1,
-    name: "Product 1",
-    autor: "Author 1",
-    image: "https://picsum.photos/id/1015/500/300",
-    lang: "English",
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    autor: "Author 2",
-    image: "https://picsum.photos/id/1016/500/300",
-    lang: "Spanish",
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    autor: "Author 3",
-    image: "https://picsum.photos/id/1019/500/300",
-    lang: "French",
-  },
-  {
-    id: 4,
-    name: "Product 4",
-    autor: "Author 4",
-    image: "https://picsum.photos/id/1018/500/300",
-    lang: "Chinese",
-  },
-  {
-    id: 5,
-    name: "Product 5",
-    autor: "Author 5",
-    image: "https://picsum.photos/id/1019/500/300",
-    lang: "Russian",
-  },
-  {
-    id: 6,
-    name: "Product 6",
-    autor: "Author 6",
-    image: "https://picsum.photos/id/1020/500/300",
-    lang: "English",
-  },
-  {
-    id: 7,
-    name: "Product 7",
-    autor: "Author 7",
-    image: "https://picsum.photos/id/1021/500/300",
-    lang: "Spanish",
-  },
-]);
-
-const genres=ref([
-    {
-        id: 1,
-        name: "Fiction",
-        num:1326
-    },
-    {
-        id: 2,
-        name: "Non-Fiction",
-        num: 987    
-    },
-    {
-        id: 3,
-        name: "Adventure",
-        num: 654
-    },
-    {
-        id: 4,
-        name: "Science Fiction",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 1,
-        name: "Fiction",
-        num:1326
-    },
-    {
-        id: 2,
-        name: "Non-Fiction",
-        num: 987    
-    },
-    {
-        id: 3,
-        name: "Adventure",
-        num: 654
-    },
-    {
-        id: 4,
-        name: "Science Fiction",
-        num: 456
-    },
-    {
-        id: 5,
-        name: "Mystery",
-        num: 321
-    },
-    {
-        id: 6,
-        name: "Romance",
-        num: 234
-    },
-    {
-        id: 7,
-        name: "Thriller",
-        num: 123
-    }
-])
 
 function gotoGenresPage(id) {
     router.push(`/catalog/genres/${id}`)
