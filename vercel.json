@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "src": "/catalog",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/catalog/genres/:slug",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/catalog/genres/:slug/subject/:id",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/catalog/genres/:slug/subject/:id/books",
+      "dest": "/index.html"
+    }
+  ]
+}
