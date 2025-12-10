@@ -3,8 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import LibraryLayout from '../../src/layouts/Library.vue'
 import GenresLayout from '../../src/layouts/Genres.vue'
 import axios from "axios";
-axios.defaults.baseURL = "https://library-backend-ixau.onrender.com";
-// axios.defaults.baseURL = "http://localhost:5001";
+// axios.defaults.baseURL = "https://library-backend-ixau.onrender.com";
+axios.defaults.baseURL = "http://localhost:5001";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +23,14 @@ const router = createRouter({
       path: "/catalog",
       name: "Catalog",
       component: () => import("../views/CatologView.vue"),
+      meta: {
+        layout: LibraryLayout,
+      },
+    },
+    {
+      path: "/test/:token",
+      name: "Unikal test",
+      component: () => import("../Vaqtincha/UnikalTest.vue"),
       meta: {
         layout: LibraryLayout,
       },

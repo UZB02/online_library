@@ -7,7 +7,7 @@
     <div class="transition duration-500" :class="menu ? `left lg:block w-full lg:w-[25%]` : `hidden lg:block w-full lg:w-[25%]`">
       <div style="width: 100%" class="flex flex-col py-2 shadow rounded">
         <div class="flex flex-col items-center  overflow-y-scroll w-full">
-            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.title}}</h1> <p class="text-slate-400">{{item.books}}</p></span>
+            <span v-for="item in genres" @click="gotoGenresPage(item.id)" class="flex justify-between w-full gap-4 p-3 border-b-2 cursor-pointer transition duration-150 border-green-400 hover:bg-green-400 hover:text-white"><h1 class="">{{item.title}}</h1> <p class="text-slate-400">{{item.books!==[] ? item.books : '0'}}</p></span>
         </div>
       </div>
     </div>

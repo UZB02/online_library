@@ -1,6 +1,6 @@
 <template>
     <div class="container bg-yellow-600
-     text-white w-full flex flex-col items-center justify-center gap-3 px-2 py-10 relative">
+     text-white w-full flex flex-col items-center justify-center gap-3 px-2 py-10 relative my-0 mx-auto">
         <div class="top flex gap-3 flex-col md:flex-row">
             <img src="../../img/photo_2024-01-18_09-04-45.jpg" class="w-14 h-14 absolute left-3 top-2">
             <span>Biz haqimizda</span>
