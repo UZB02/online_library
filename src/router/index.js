@@ -1,7 +1,20 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import LibraryLayout from '../../src/layouts/Library.vue'
-import GenresLayout from '../../src/layouts/Genres.vue'
+// src/router/index.js
+import { createRouter, createWebHistory } from "vue-router";
+
+// Layoutlar
+import LibraryLayout from "../layouts/Library.vue";
+import GenresLayout from "../layouts/Genres.vue";
+
+// Views
+import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import CatalogView from "../views/CatologView.vue"; // typo tuzatildi
+import CatalogGenresView from "../views/CatalogGenresView.vue";
+import SubjectView from "../views/SubjectView.vue";
+import AllBooksView from "../views/AllBooksView.vue";
+import UnikalTestView from "../Vaqtincha/unikaltestview.vue"; // case-sensitive
+
+// Axios konfiguratsiyasi (frontendda API chaqirish uchun)
 import axios from "axios";
 // axios.defaults.baseURL = "https://library-backend-ixau.onrender.com";
 axios.defaults.baseURL = "http://localhost:5001";
@@ -17,12 +30,12 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: () => import("../views/AboutView.vue"),
+      component: AboutView,
     },
     {
       path: "/catalog",
       name: "Catalog",
-      component: () => import("../views/CatologView.vue"),
+      component: CatalogView,
       meta: {
         layout: LibraryLayout,
       },
@@ -30,7 +43,7 @@ const router = createRouter({
     {
       path: "/test/:token",
       name: "TestToken",
-      component: () => import("../Vaqtincha/unikaltestview.vue"),
+      component: UnikalTestView, // case-sensitive import ishlatilmoqda
       meta: {
         layout: LibraryLayout,
       },
@@ -38,7 +51,7 @@ const router = createRouter({
     {
       path: "/catalog/:slug",
       name: "CatalogGenres",
-      component: () => import("../views/CatalogGenresView.vue"),
+      component: CatalogGenresView,
       meta: {
         layout: GenresLayout,
       },
@@ -46,15 +59,15 @@ const router = createRouter({
     {
       path: "/catalog/genres/:slug/:id",
       name: "Subject",
-      component: () => import("../views/SubjectView.vue"),
+      component: SubjectView,
       meta: {
         layout: GenresLayout,
       },
     },
     {
       path: "/catalog/genres/:slug/subject/:id/books",
-      name: "All Books",
-      component: () => import("../views/AllBooksView.vue"),
+      name: "AllBooks",
+      component: AllBooksView,
       meta: {
         layout: GenresLayout,
       },
@@ -62,4 +75,4 @@ const router = createRouter({
   ],
 });
 
-export default router
+export default router;
