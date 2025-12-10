@@ -86,6 +86,7 @@ import Dialog from 'primevue/dialog';
 
 const route = useRoute();
 const token = route.params.token;
+console.log("Token:", route.params.token);
 
 const loading = ref(true);
 const notFound = ref(false);
@@ -101,6 +102,7 @@ const score = ref(0);
 
 // TESTNI TOKEN ORQALI YUKLASH
 const loadTest = async () => {
+    console.log(token);
   try {
     const res = await api.get(
       `/tests/link/${token}`
