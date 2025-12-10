@@ -29,8 +29,8 @@ const router = createRouter({
     },
     {
       path: "/test/:token",
-      name: "UnikalTest",
-      component: () => import("../Vaqtincha/UnikalTestView.vue"),
+      name: "TestToken",
+      component: () => import("../Vaqtincha/unikaltestview.vue"),
       meta: {
         layout: LibraryLayout,
       },
