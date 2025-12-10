@@ -13,6 +13,10 @@
       "dest": "/index.html"
     },
     {
+      "src": "/test/:token",
+      "dest": "/index.html"
+    },
+    {
       "src": "/catalog/genres/:slug/subject/:id/books",
       "dest": "/index.html"
     }
