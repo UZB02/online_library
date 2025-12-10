@@ -153,7 +153,6 @@ const submitAnswers = async () => {
     loadingSubmit.value = false;
   }
 };
-
 // TESTNI QAYTA BOSHLASH
 const resetTest = () => {
   showResult.value = false;
